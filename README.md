@@ -46,6 +46,10 @@ Under Construction. . .
 
 - Video view and like counts are all concentrated on the low end of 1,000 for opinions. Therefore, the data distribution is right-skewed, which will inform the models and model types that will be built.
 
+- A/B Test analysis shows that there is a statistically significant difference in the average view counts between videos from verified accounts and videos from unverified accounts. This suggests there might be fundamental behavioral differences between these two groups of accounts.
+
+- It would be interesting to investigate the root cause of this behavioral difference. For example, do unverified accounts tend to post more clickbait videos? Or are unverified accounts associated with spam bots that help inflate view counts?
+
 </br></br>
 
 # 4 | Conclusions
@@ -59,6 +63,7 @@ As expected, the model . . .
 * pandas = "^2.0"
 * matplotlib = "^3.8.0"
 * seaborn = "^0.13.0"
+* scipy = "^1.11.3"
 * scikit-learn = "^1.3.1"
 </br></br>
 
