@@ -1,6 +1,7 @@
 ![tiktok](figs/tiktokclaims.jpg)
 # TikTok Claims Prediction Model
 This project's goal is to build a classification model that predicts whether a video is a claim or opinion.
+### TLDR Presentation [LINK](https://docs.google.com/presentation/d/1M6YVY6SPIpz14d4j1wdiL_ziZN1wZVp9B1ZU7bfPz5Q/edit?usp=sharing).
 </br></br>
 
 # Table of Contents
@@ -34,7 +35,7 @@ The goal of this second notebook is to characterize and clean the 2019 TikTok Cl
 ![download_hist](figs/download_hist.jpg)
 </br></br>
 
-### Google Slides EDA presentation link [HERE](https://docs.google.com/presentation/d/1M6YVY6SPIpz14d4j1wdiL_ziZN1wZVp9B1ZU7bfPz5Q/edit?usp=sharing).
+### EDA Presentation [LINK](https://docs.google.com/presentation/d/1M6YVY6SPIpz14d4j1wdiL_ziZN1wZVp9B1ZU7bfPz5Q/edit?usp=sharing).
 </br></br>
 
 # 3 | Building the Model
