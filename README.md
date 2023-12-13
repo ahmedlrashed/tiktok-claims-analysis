@@ -38,7 +38,20 @@ The goal of this second notebook is to characterize and clean the 2019 TikTok Cl
 </br></br>
 
 # 3 | Building the Model
-Under Construction. . .
+Approximately 94.2% of the dataset represents videos posted by unverified accounts and 5.8% represents videos posted by verified accounts. Since the outcome variable is not very balanced, we use resampling to create class balance in the outcome variable, as needed.
+
+Next, we code a correlation matrix to help determine most correlated variables and plot a heatmap of the data.
+![heatmap](figs/heatmap.jpg)
+
+The above heatmap shows that the following pair of variables are strongly correlated: `video_view_count` and `video_like_count` (0.86 correlation coefficient).
+
+One of the model assumptions for logistic regression is no severe multicollinearity among the features. To build a logistic regression model that meets this assumption, we should exclude `video_like_count`. Among the variables that quantify video metrics, we could keep `video_view_count`, `video_share_count`, `video_download_count`, and `video_comment_count` as features.
+
+The `claim_status` and `author_ban_status` features are each of data type `object` currently. In order to work with the implementations of models through `sklearn`, we must make these categorical features numeric.
+
+After we split, train, and test our data, we create a confusion matrix to visualize the results of the logistic regression model.
+
+![confusion_matrix](figs/confusion_matrix.jpg)
 </br></br>
 
 ## Observations & Patterns
@@ -50,11 +63,17 @@ Under Construction. . .
 
 - It would be interesting to investigate the root cause of this behavioral difference. For example, do unverified accounts tend to post more clickbait videos? Or are unverified accounts associated with spam bots that help inflate view counts?
 
+- The dataset has a few strongly correlated variables, which might lead to multicollinearity issues when fitting a logistic regression model. We decided to drop video_like_count from the model building.
+
+- Based on the logistic regression model, each additional second of the video is associated with 0.009 increase in the log-odds of the user having a verified status.
+
+- The logistic regression model had not great, but acceptable predictive power: a precision of 61% is less than ideal, but a recall of 84% is very good. Overall accuracy is towards the lower end of what would typically be considered acceptable.
+
 </br></br>
 
 # 4 | Conclusions
 
-As expected, the model . . .
+We developed a logistic regression model for verified status based on video features. The model had decent predictive power. Based on the estimated model coefficients from the logistic regression, longer videos tend to be associated with higher odds of the user being verified. Other video features have small estimated coefficients in the model, so their association with verified status seems to be small.
 </br></br>
 
 # 5 | Dependencies
